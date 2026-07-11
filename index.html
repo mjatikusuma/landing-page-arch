@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Architek — Minimalist Architecture & Spatial Design Studio</title>
+    <meta name="description" content="Architek is a premium minimalist architectural design studio crafting spatial experiences that inspire, endure, and harmonize with their environment.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mjatikusuma.github.io/landing-page-arch/">
+    <meta property="og:title" content="Architek — Minimalist Architecture & Spatial Design Studio">
+    <meta property="og:description" content="Crafting spatial experiences that inspire, endure, and harmonize with their environment.">
+    <meta property="og:image" content="assets/hero.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Architek — Minimalist Architecture & Spatial Design Studio">
+    <meta property="twitter:description" content="Crafting spatial experiences that inspire, endure, and harmonize with their environment.">
+    <meta property="twitter:image" content="assets/hero.jpg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Lucide Icons (CDN) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="logo-dot"></span>ARCHITEK
+            </a>
+            
+            <nav class="nav-links" id="nav-links">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#portfolio" class="nav-link">Projects</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#testimonials" class="nav-link">Reviews</a>
+                <a href="#contact" class="nav-link btn-secondary-mobile">Let's Talk</a>
+            </nav>
+            
+            <div class="nav-actions">
+                <a href="#contact" class="btn btn-secondary">Let's Talk</a>
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Menu">
+                    <i data-lucide="menu" class="menu-icon"></i>
+                    <i data-lucide="x" class="close-icon hidden"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-container">
+                <div class="hero-content scroll-reveal">
+                    <span class="hero-badge"><i data-lucide="sparkles" class="badge-icon"></i>Design Philosophy</span>
+                    <h1 class="hero-title">WE SHAPE SPACE INTO <span>ART</span>.</h1>
+                    <p class="hero-description">
+                        We are an award-winning minimalist architectural studio. We believe in raw materials, precise geometries, and natural light to design enduring spatial experiences.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#portfolio" class="btn btn-primary">
+                            Explore Projects <i data-lucide="arrow-right" class="btn-icon"></i>
+                        </a>
+                        <a href="#about" class="btn btn-tertiary">Our Story</a>
+                    </div>
+                </div>
+                
+                <div class="hero-media scroll-reveal">
+                    <div class="image-wrapper hero-img-wrapper">
+                        <img src="assets/hero.jpg" alt="Minimalist architectural concrete and glass villa at dusk" class="hero-img">
+                        <div class="img-overlay"></div>
+                    </div>
+                    <div class="hero-floating-card">
+                        <div class="floating-icon-box">
+                            <i data-lucide="compass" class="floating-icon"></i>
+                        </div>
+                        <div>
+                            <span class="floating-card-label">Next Project</span>
+                            <span class="floating-card-val">Villa Solitude, 2026</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Partners Marquee -->
+            <div class="marquee-section">
+                <div class="marquee-title">Trusted by industry leaders</div>
+                <div class="marquee">
+                    <div class="marquee-inner">
+                        <span>Concrete Lab</span>
+                        <span>Vanguard Development</span>
+                        <span>Lumina Lights</span>
+                        <span>Brutalist Studio</span>
+                        <span>EcoStone Co.</span>
+                        <span>Glasswork Intl</span>
+                        <!-- Duplicate for infinite effect -->
+                        <span>Concrete Lab</span>
+                        <span>Vanguard Development</span>
+                        <span>Lumina Lights</span>
+                        <span>Brutalist Studio</span>
+                        <span>EcoStone Co.</span>
+                        <span>Glasswork Intl</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about" id="about">
+            <div class="about-container">
+                <div class="about-grid">
+                    <div class="about-text-left scroll-reveal">
+                        <span class="section-subtitle">Who We Are</span>
+                        <h2 class="section-title">Redefining modern landscapes.</h2>
+                        <div class="about-quote">
+                            <i data-lucide="quote" class="quote-icon"></i>
+                            <p>"Architecture is not just about building structures; it is about writing stories in light, texture, and silence."</p>
+                        </div>
+                    </div>
+                    
+                    <div class="about-text-right scroll-reveal">
+                        <p class="paragraph-lead">
+                            Founded in 2014, Architek has built a reputation for designing structures that interact seamlessly with their surrounding environments. We strip away the unnecessary, leaving only what is essential and beautiful.
+                        </p>
+                        <p class="paragraph-body">
+                            Our design process is deeply collaborative, working with master craftsmen, structural engineers, and sustainable designers to deliver spaces that are visually breathtaking, structurally bold, and ecologically responsible.
+                        </p>
+                        
+                        <!-- Core Principles List -->
+                        <div class="principles-grid">
+                            <div class="principle-item">
+                                <i data-lucide="check" class="principle-check"></i>
+                                <span>Minimalist Form</span>
+                            </div>
+                            <div class="principle-item">
+                                <i data-lucide="check" class="principle-check"></i>
+                                <span>Sustainable Integration</span>
+                            </div>
+                            <div class="principle-item">
+                                <i data-lucide="check" class="principle-check"></i>
+                                <span>Timeless Aesthetics</span>
+                            </div>
+                            <div class="principle-item">
+                                <i data-lucide="check" class="principle-check"></i>
+                                <span>Functional Precision</span>
+                            </div>
+                        </div>
+
+                        <!-- Stats Banner -->
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <span class="stat-num" data-val="12">12+</span>
+                                <span class="stat-lbl">Years of Craft</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-num" data-val="150">150+</span>
+                                <span class="stat-lbl">Completed Projects</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-num" data-val="42">42+</span>
+                                <span class="stat-lbl">International Awards</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio/Projects Section -->
+        <section class="portfolio" id="portfolio">
+            <div class="portfolio-container">
+                <div class="section-header scroll-reveal">
+                    <div>
+                        <span class="section-subtitle">Our Work</span>
+                        <h2 class="section-title">Selected Masterpieces</h2>
+                    </div>
+                    <!-- Filter Controls -->
+                    <div class="filter-controls" id="filter-controls">
+                        <button class="filter-btn active" data-filter="all">All Projects</button>
+                        <button class="filter-btn" data-filter="residential">Residential</button>
+                        <button class="filter-btn" data-filter="commercial">Commercial</button>
+                        <button class="filter-btn" data-filter="interior">Interior</button>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Grid -->
+                <div class="portfolio-grid" id="portfolio-grid">
+                    
+                    <!-- Project 1 (Residential) -->
+                    <div class="project-card scroll-reveal" data-category="residential">
+                        <div class="project-media">
+                            <img src="assets/project-1.jpg" alt="Villa Solitude overlooking a calm lake">
+                            <div class="project-hover-overlay">
+                                <div class="project-meta">
+                                    <span class="project-category">Residential</span>
+                                    <h3 class="project-name">Villa Solitude</h3>
+                                </div>
+                                <div class="project-arrow-box">
+                                    <i data-lucide="arrow-up-right" class="project-arrow"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-details-visible">
+                            <h4 class="project-title-text">Villa Solitude</h4>
+                            <span class="project-location">Zurich, Switzerland — 2025</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 (Interior) -->
+                    <div class="project-card scroll-reveal" data-category="interior">
+                        <div class="project-media">
+                            <img src="assets/project-2.jpg" alt="Minimalist concrete interior space">
+                            <div class="project-hover-overlay">
+                                <div class="project-meta">
+                                    <span class="project-category">Interior</span>
+                                    <h3 class="project-name">Monolith Office</h3>
+                                </div>
+                                <div class="project-arrow-box">
+                                    <i data-lucide="arrow-up-right" class="project-arrow"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-details-visible">
+                            <h4 class="project-title-text">Monolith Office</h4>
+                            <span class="project-location">Tokyo, Japan — 2026</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 (Commercial) -->
+                    <div class="project-card scroll-reveal" data-category="commercial">
+                        <div class="project-media">
+                            <img src="assets/project-3.jpg" alt="Sustainable architecture pavilion in park">
+                            <div class="project-hover-overlay">
+                                <div class="project-meta">
+                                    <span class="project-category">Commercial</span>
+                                    <h3 class="project-name">Timber Pavilion</h3>
+                                </div>
+                                <div class="project-arrow-box">
+                                    <i data-lucide="arrow-up-right" class="project-arrow"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-details-visible">
+                            <h4 class="project-title-text">Timber Pavilion</h4>
+                            <span class="project-location">Copenhagen, Denmark — 2024</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services" id="services">
+            <div class="services-container">
+                <div class="section-header scroll-reveal">
+                    <div>
+                        <span class="section-subtitle">What We Do</span>
+                        <h2 class="section-title">Tailored Spatial Solutions</h2>
+                    </div>
+                    <p class="section-header-description">
+                        We offer a comprehensive suite of architectural and master planning services, translating design concepts into functional, high-end realities.
+                    </p>
+                </div>
+
+                <div class="services-grid">
+                    
+                    <!-- Service 1 -->
+                    <div class="service-card scroll-reveal">
+                        <div class="service-header">
+                            <div class="service-icon-box">
+                                <i data-lucide="drafting-compass" class="service-icon"></i>
+                            </div>
+                            <span class="service-number">01</span>
+                        </div>
+                        <h3 class="service-title">Architectural Design</h3>
+                        <p class="service-description">
+                            Creating detailed blueprints and concepts for residential, commercial, and public buildings with an emphasis on minimalist, modern, and structural integrity.
+                        </p>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="service-card scroll-reveal">
+                        <div class="service-header">
+                            <div class="service-icon-box">
+                                <i data-lucide="palette" class="service-icon"></i>
+                            </div>
+                            <span class="service-number">02</span>
+                        </div>
+                        <h3 class="service-title">Interior Architecture</h3>
+                        <p class="service-description">
+                            Designing custom interior layouts, built-in furniture, material selections, and lighting designs to align perfectly with the building's exterior.
+                        </p>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="service-card scroll-reveal">
+                        <div class="service-header">
+                            <div class="service-icon-box">
+                                <i data-lucide="globe-2" class="service-icon"></i>
+                            </div>
+                            <span class="service-number">03</span>
+                        </div>
+                        <h3 class="service-title">Urban Masterplanning</h3>
+                        <p class="service-description">
+                            Designing public spaces, neighborhood landscapes, and mixed-use commercial developments that focus on community flow and green integration.
+                        </p>
+                    </div>
+
+                    <!-- Service 4 -->
+                    <div class="service-card scroll-reveal">
+                        <div class="service-header">
+                            <div class="service-icon-box">
+                                <i data-lucide="leaf" class="service-icon"></i>
+                            </div>
+                            <span class="service-number">04</span>
+                        </div>
+                        <h3 class="service-title">Sustainable Design Consulting</h3>
+                        <p class="service-description">
+                            Advising on low-carbon materials, geothermal heating, solar integration, rainwater harvesting, and LEED/Passivhaus building certifications.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials" id="testimonials">
+            <div class="testimonials-container">
+                <div class="section-header scroll-reveal centered">
+                    <span class="section-subtitle">Reviews</span>
+                    <h2 class="section-title">Loved by Visionary Clients</h2>
+                </div>
+
+                <div class="testimonials-grid">
+                    
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card scroll-reveal">
+                        <div class="testimonial-rating">
+                            <i data-lucide="star" class="star-icon filled"></i>
+                            <i data-lucide="star" class="star-icon filled"></i>
+                            <i data-lucide="star" class="star-icon filled"></i>
+                            <i data-lucide="star" class="star-icon filled"></i>
+                            <i data-lucide="star" class="star-icon filled"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Working with Architek was a seamless journey of turning our raw concepts into a physical masterpiece. The attention to light and raw texture is completely unparalleled. Our forest villa feels organic and deeply peaceful."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <span class="author-name">Marcus & Elena Vance</span>
+                                <span class="author-title">Owners, Villa Solitude</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card scroll-reveal">
+                        <div class="testimonial-rating">
+                            <i data-lucide="star" class="star-icon filled"></i>
+                            <i data-lucide="star" class="star-icon filled"></i>
+                            <i data-lucide="star" class="star-icon filled"></i>
+                            <i data-lucide="star" class="star-icon filled"></i>
+                            <i data-lucide="star" class="star-icon filled"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "The timber pavilion designed by Architek has become the centerpiece of our community. It perfectly blends sustainable materials with a highly modern design. They delivered on budget and far exceeded our aesthetic expectations."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <span class="author-name">Kristoffer Nygård</span>
+                                <span class="author-title">Director, Copenhagen Eco-Park</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <div class="contact-container">
+                <div class="contact-grid">
+                    <div class="contact-info scroll-reveal">
+                        <span class="section-subtitle">Let's Connect</span>
+                        <h2 class="section-title">Ready to build your masterpiece?</h2>
+                        <p class="contact-description">
+                            Whether you want to commission a residential project, discuss a commercial masterplan, or ask a simple question, we'd love to hear from you.
+                        </p>
+                        
+                        <div class="contact-methods">
+                            <div class="method-item">
+                                <div class="method-icon-box">
+                                    <i data-lucide="mail" class="method-icon"></i>
+                                </div>
+                                <div>
+                                    <span class="method-label">Email Us</span>
+                                    <a href="mailto:hello@architek.studio" class="method-value">hello@architek.studio</a>
+                                </div>
+                            </div>
+
+                            <div class="method-item">
+                                <div class="method-icon-box">
+                                    <i data-lucide="phone" class="method-icon"></i>
+                                </div>
+                                <div>
+                                    <span class="method-label">Call Us</span>
+                                    <a href="tel:+41442000000" class="method-value">+41 (44) 200-0000</a>
+                                </div>
+                            </div>
+
+                            <div class="method-item">
+                                <div class="method-icon-box">
+                                    <i data-lucide="map-pin" class="method-icon"></i>
+                                </div>
+                                <div>
+                                    <span class="method-label">Visit Studio</span>
+                                    <span class="method-value">Limmatquai 12, 8001 Zürich, CH</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-wrapper scroll-reveal">
+                        <form id="contact-form" class="contact-form">
+                            <div class="form-group">
+                                <input type="text" id="name" name="name" required placeholder=" ">
+                                <label for="name">Your Name</label>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" required placeholder=" ">
+                                <label for="email">Email Address</label>
+                            </div>
+
+                            <div class="form-group">
+                                <select id="project-type" name="project-type">
+                                    <option value="" disabled selected hidden>Project Type</option>
+                                    <option value="residential">Residential Design</option>
+                                    <option value="commercial">Commercial / Public</option>
+                                    <option value="interior">Interior Styling</option>
+                                    <option value="other">Other Inquiry</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <textarea id="message" name="message" required placeholder=" " rows="4"></textarea>
+                                <label for="message">Project Brief & Details</label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-block" id="form-submit-btn">
+                                Send Inquiry <i data-lucide="send" class="btn-icon"></i>
+                            </button>
+                            
+                            <div id="form-feedback" class="form-feedback hidden"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-container">
+                <div class="footer-grid">
+                    
+                    <div class="footer-col footer-brand-col">
+                        <a href="#" class="logo footer-logo">
+                            <span class="logo-dot"></span>ARCHITEK
+                        </a>
+                        <p class="footer-brand-text">
+                            Crafting premium minimalist spatial designs that stand the test of time. Based in Zürich, operating worldwide.
+                        </p>
+                        <div class="social-links">
+                            <a href="#" class="social-link" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                            <a href="#" class="social-link" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                            <a href="#" class="social-link" aria-label="Pinterest"><i data-lucide="pinterest"></i></a>
+                            <a href="#" class="social-link" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4 class="footer-col-title">Sitemap</h4>
+                        <ul class="footer-links">
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#about">About Studio</a></li>
+                            <li><a href="#portfolio">Our Portfolio</a></li>
+                            <li><a href="#services">Our Services</a></li>
+                            <li><a href="#contact">Contact Us</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4 class="footer-col-title">Studio Hours</h4>
+                        <ul class="footer-hours">
+                            <li><span>Monday - Friday</span> <span>09:00 - 18:00</span></li>
+                            <li><span>Saturday</span> <span>10:00 - 15:00</span></li>
+                            <li><span>Sunday</span> <span>Closed</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col footer-newsletter-col">
+                        <h4 class="footer-col-title">Newsletter</h4>
+                        <p class="newsletter-text">Subscribe to receive exclusive insights on architecture, design, and studio updates.</p>
+                        <form id="newsletter-form" class="newsletter-form">
+                            <input type="email" placeholder="Your Email Address" required class="newsletter-input">
+                            <button type="submit" class="newsletter-btn" aria-label="Subscribe">
+                                <i data-lucide="arrow-right"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-container footer-bottom-flex">
+                <p class="copyright">&copy; 2026 Architek Studio. All rights reserved.</p>
+                <div class="footer-legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script Entry -->
+    <script src="script.js"></script>
+</body>
+</html>
