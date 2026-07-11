@@ -1,0 +1,194 @@
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // Initialize Lucide Icons
+    if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+    }
+
+    // ==========================================================================
+    // STICKY NAVBAR
+    // ==========================================================================
+    const navbar = document.getElementById('navbar');
+    
+    const handleScroll = () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check on load
+
+    // ==========================================================================
+    // MOBILE NAVIGATION MENU
+    // ==========================================================================
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const navLinks = document.getElementById('nav-links');
+    const menuIcon = mobileToggle.querySelector('.menu-icon');
+    const closeIcon = mobileToggle.querySelector('.close-icon');
+    
+    const toggleMenu = () => {
+        const isActive = navLinks.classList.toggle('active');
+        
+        if (isActive) {
+            menuIcon.classList.add('hidden');
+            closeIcon.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Stop background scrolling
+        } else {
+            menuIcon.classList.remove('hidden');
+            closeIcon.classList.add('hidden');
+            document.body.style.overflow = ''; // Resume scrolling
+        }
+    };
+
+    mobileToggle.addEventListener('click', toggleMenu);
+
+    // Close menu when clicking nav link
+    const links = document.querySelectorAll('.nav-link');
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            if (navLinks.classList.contains('active')) {
+                toggleMenu();
+            }
+        });
+    });
+
+    // ==========================================================================
+    // PORTFOLIO FILTERING
+    // ==========================================================================
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            button.classList.add('active');
+
+            const filterValue = button.getAttribute('data-filter');
+
+            projectCards.forEach(card => {
+                const category = card.getAttribute('data-category');
+
+                if (filterValue === 'all' || category === filterValue) {
+                    // Show item
+                    card.style.display = 'flex';
+                    card.classList.remove('fade-out');
+                    card.classList.add('fade-in');
+                } else {
+                    // Hide item
+                    card.classList.remove('fade-in');
+                    card.classList.add('fade-out');
+                    // Wait for fade-out animation to complete, then hide
+                    setTimeout(() => {
+                        if (card.classList.contains('fade-out')) {
+                            card.style.display = 'none';
+                        }
+                    }, 300);
+                }
+            });
+        });
+    });
+
+    // ==========================================================================
+    // SCROLL REVEAL ANIMATIONS (INTERSECTION OBSERVER)
+    // ==========================================================================
+    const revealElements = document.querySelectorAll('.scroll-reveal');
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('reveal');
+                observer.unobserve(entry.target); // Stop observing once revealed
+            }
+        });
+    }, {
+        threshold: 0.1, // Trigger when 10% of element is visible
+        rootMargin: '0px 0px -50px 0px' // Offset slightly to feel more organic
+    });
+
+    revealElements.forEach(el => {
+        revealObserver.observe(el);
+    });
+
+    // ==========================================================================
+    // CONTACT FORM INQUIRY SUBMISSION (SIMULATED)
+    // ==========================================================================
+    const contactForm = document.getElementById('contact-form');
+    const formFeedback = document.getElementById('form-feedback');
+    const formSubmitBtn = document.getElementById('form-submit-btn');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Set loading state
+            formSubmitBtn.disabled = true;
+            formSubmitBtn.innerHTML = `Sending... <i data-lucide="loader-2" class="btn-icon animate-spin"></i>`;
+            if (typeof lucide !== 'undefined') lucide.createIcons();
+
+            // Simulate API request (1.5 seconds)
+            setTimeout(() => {
+                const name = document.getElementById('name').value;
+                
+                // Form response simulation
+                formFeedback.classList.remove('hidden', 'success', 'error');
+                formFeedback.classList.add('success');
+                formFeedback.innerHTML = `<strong>Thank you, ${name}!</strong> Your inquiry has been sent successfully. Our studio team will review your brief and contact you within 24 hours.`;
+                
+                // Reset submit button and form
+                formSubmitBtn.disabled = false;
+                formSubmitBtn.innerHTML = `Send Inquiry <i data-lucide="send" class="btn-icon"></i>`;
+                if (typeof lucide !== 'undefined') lucide.createIcons();
+                
+                contactForm.reset();
+
+                // Reset floating labels (by making inputs look placeholder empty)
+                const inputs = contactForm.querySelectorAll('input, textarea');
+                inputs.forEach(input => {
+                    input.blur();
+                });
+
+                // Auto hide feedback after 8 seconds
+                setTimeout(() => {
+                    formFeedback.classList.add('hidden');
+                }, 8000);
+
+            }, 1500);
+        });
+    }
+
+    // ==========================================================================
+    // NEWSLETTER FORM SUBMISSION (SIMULATED)
+    // ==========================================================================
+    const newsletterForm = document.getElementById('newsletter-form');
+
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const input = newsletterForm.querySelector('.newsletter-input');
+            const email = input.value;
+
+            // Success feedback
+            alert(`Successfully subscribed: ${email}. Thank you for joining our architectural newsletter!`);
+            
+            newsletterForm.reset();
+        });
+    }
+
+    // Add extra spin class to loader icon dynamically
+    const style = document.createElement('style');
+    style.innerHTML = `
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .animate-spin {
+            animation: spin 1s linear infinite;
+        }
+    `;
+    document.head.appendChild(style);
+});
