@@ -180,17 +180,33 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==========================================================================
-    // NEXT PROJECT SLIDESHOW
+    // HERO & NEXT PROJECT SLIDESHOWS (SYNCHRONIZED & ALTERNATED)
     // ==========================================================================
-    const slideshowContainer = document.getElementById('next-project-slideshow');
-    if (slideshowContainer) {
-        const slides = slideshowContainer.querySelectorAll('.slide');
-        let currentSlide = 0;
+    const heroSlideshow = document.getElementById('hero-slideshow');
+    const projectSlideshow = document.getElementById('next-project-slideshow');
+    
+    if (heroSlideshow && projectSlideshow) {
+        const heroSlides = heroSlideshow.querySelectorAll('.hero-slide');
+        const projectSlides = projectSlideshow.querySelectorAll('.slide');
+        
+        let currentSlide = 0; // Index of active hero slide
 
         setInterval(() => {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add('active');
+            // Deactivate current active slides
+            heroSlides[currentSlide].classList.remove('active');
+            
+            // Next project is always (currentSlide + 1) % length
+            const nextSlide = (currentSlide + 1) % heroSlides.length;
+            projectSlides[nextSlide].classList.remove('active');
+
+            // Move to next slide index for hero
+            currentSlide = nextSlide;
+            
+            // Activate new slides
+            heroSlides[currentSlide].classList.add('active');
+            
+            const nextActiveSlide = (currentSlide + 1) % heroSlides.length;
+            projectSlides[nextActiveSlide].classList.add('active');
         }, 5000); // Transition every 5 seconds
     }
 
