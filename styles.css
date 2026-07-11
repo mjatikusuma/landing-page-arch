@@ -252,21 +252,16 @@ section {
 }
 
 .logo {
-    font-family: var(--font-heading);
-    font-weight: 800;
-    font-size: 1.5rem;
-    letter-spacing: -0.03em;
-    color: var(--color-text-primary);
     display: flex;
     align-items: center;
-    gap: 8px;
 }
 
-.logo-dot {
-    width: 8px;
-    height: 8px;
-    background-color: var(--color-accent);
-    border-radius: 50%;
+.logo-img {
+    height: 38px;
+    width: auto;
+    object-fit: contain;
+    filter: invert(1);
+    mix-blend-mode: screen;
 }
 
 .nav-links {
