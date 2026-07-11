@@ -261,7 +261,6 @@ section {
     width: auto;
     object-fit: contain;
     filter: invert(1);
-    mix-blend-mode: screen;
 }
 
 .nav-links {
