@@ -179,6 +179,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // ==========================================================================
+    // NEXT PROJECT SLIDESHOW
+    // ==========================================================================
+    const slideshowContainer = document.getElementById('next-project-slideshow');
+    if (slideshowContainer) {
+        const slides = slideshowContainer.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        setInterval(() => {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }, 4000); // Transition every 4 seconds
+    }
+
     // Add extra spin class to loader icon dynamically
     const style = document.createElement('style');
     style.innerHTML = `
