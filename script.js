@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
             slides[currentSlide].classList.remove('active');
             currentSlide = (currentSlide + 1) % slides.length;
             slides[currentSlide].classList.add('active');
-        }, 4000); // Transition every 4 seconds
+        }, 5000); // Transition every 5 seconds
     }
 
     // Add extra spin class to loader icon dynamically
