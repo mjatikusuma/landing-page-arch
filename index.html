@@ -25,7 +25,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles.css?v=17">
+    <link rel="stylesheet" href="styles.css?v=18">
     
     <!-- Lucide Icons (CDN) -->
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -195,37 +195,56 @@
                     <h2 class="section-title">Education & Credentials</h2>
                 </div>
                 
-                <div class="education-grid scroll-reveal">
-                    <!-- Column 1: Education -->
-                    <div class="education-column">
-                        <h3 class="edu-column-title"><i data-lucide="graduation-cap" class="edu-column-icon"></i> Education</h3>
-                        <div class="edu-card">
-                            <span class="edu-date">2017 – 2021</span>
-                            <h4 class="edu-degree">Bachelor's Degree in Architecture Engineering</h4>
-                            <span class="edu-school">Universitas Sriwijaya</span>
+                <div class="edu-timeline scroll-reveal">
+                    
+                    <!-- Item 1: Uni -->
+                    <div class="edu-timeline-item">
+                        <div class="edu-timeline-node">
+                            <i data-lucide="graduation-cap"></i>
+                        </div>
+                        <div class="edu-timeline-card">
+                            <h3 class="edu-card-org">Universitas Sriwijaya</h3>
+                            <h4 class="edu-card-degree">Bachelor's Degree in Architecture Engineering</h4>
+                            <div class="edu-card-date-badge">2017 – 2021</div>
                         </div>
                     </div>
 
-                    <!-- Column 2: Professional Development -->
-                    <div class="education-column">
-                        <h3 class="edu-column-title"><i data-lucide="award" class="edu-column-icon"></i> Professional Development</h3>
-                        <div class="edu-card">
-                            <ul class="edu-cert-list">
-                                <li>
-                                    <span class="cert-date">2023 – 2026</span>
-                                    <span class="cert-name">Ahli Muda Desain Interior — LPJK</span>
-                                </li>
-                                <li>
-                                    <span class="cert-date">2024 – 2029</span>
-                                    <span class="cert-name">Ahli Muda Teknik Bangunan Gedung — LPJK</span>
-                                </li>
-                                <li>
-                                    <span class="cert-date">2022</span>
-                                    <span class="cert-name">Building Information Modeling (BIM) Arsitektur — LPK MAT</span>
-                                </li>
-                            </ul>
+                    <!-- Item 2: LPJK Interior -->
+                    <div class="edu-timeline-item">
+                        <div class="edu-timeline-node">
+                            <i data-lucide="award"></i>
+                        </div>
+                        <div class="edu-timeline-card">
+                            <h3 class="edu-card-org">LPJK</h3>
+                            <h4 class="edu-card-degree">Ahli Muda Desain Interior</h4>
+                            <div class="edu-card-date-badge">2023 – 2026</div>
                         </div>
                     </div>
+
+                    <!-- Item 3: LPJK Bangunan -->
+                    <div class="edu-timeline-item">
+                        <div class="edu-timeline-node">
+                            <i data-lucide="award"></i>
+                        </div>
+                        <div class="edu-timeline-card">
+                            <h3 class="edu-card-org">LPJK</h3>
+                            <h4 class="edu-card-degree">Ahli Muda Teknik Bangunan Gedung</h4>
+                            <div class="edu-card-date-badge">2024 – 2029</div>
+                        </div>
+                    </div>
+
+                    <!-- Item 4: BIM -->
+                    <div class="edu-timeline-item">
+                        <div class="edu-timeline-node">
+                            <i data-lucide="cpu"></i>
+                        </div>
+                        <div class="edu-timeline-card">
+                            <h3 class="edu-card-org">LPK MAT</h3>
+                            <h4 class="edu-card-degree">Building Information Modeling (BIM) Arsitektur</h4>
+                            <div class="edu-card-date-badge">2022</div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -481,6 +500,6 @@
     </footer>
 
     <!-- Script Entry -->
-    <script src="script.js?v=17"></script>
+    <script src="script.js?v=18"></script>
 </body>
 </html>
