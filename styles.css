@@ -1819,66 +1819,16 @@ a.method-value:hover {
 }
 
 /* ==========================================================================
-   MINIMAL QUALIFICATIONS SECTION
+   EDUCATION SECTION
    ========================================================================== */
 .education-section {
     padding: 100px 24px;
-    background-color: var(--color-bg);
+    background-color: var(--color-bg-card);
     border-top: 1px solid var(--color-border);
 }
 
 .education-container {
     width: 100%;
-    max-width: 800px;
+    max-width: var(--container-max-width);
     margin: 0 auto;
-    text-align: left;
-}
-
-.edu-minimal-list {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    margin-top: 50px;
-}
-
-.edu-minimal-item {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-.edu-minimal-icon {
-    color: var(--color-text-primary);
-    margin-bottom: 2px;
-    display: flex;
-    align-items: center;
-}
-
-.edu-minimal-icon i {
-    width: 20px;
-    height: 20px;
-    color: var(--color-text-primary);
-}
-
-.edu-minimal-org {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--color-text-primary);
-    margin: 0;
-    line-height: 1.2;
-}
-
-.edu-minimal-degree {
-    font-size: 1.05rem;
-    font-weight: 400;
-    color: var(--color-text-primary);
-    margin: 0;
-    line-height: 1.3;
-}
-
-.edu-minimal-date {
-    font-size: 0.95rem;
-    font-weight: 400;
-    color: var(--color-text-primary);
-    opacity: 0.85;
 }
