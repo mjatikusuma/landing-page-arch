@@ -1275,7 +1275,7 @@ a.method-value:hover {
 .footer {
     background-color: var(--color-bg);
     border-top: 1px solid var(--color-border);
-    padding: 60px 24px;
+    padding: 50px 24px;
 }
 
 .footer-container {
@@ -1292,20 +1292,21 @@ a.method-value:hover {
     gap: 32px;
 }
 
-.footer-left-group {
+.footer-logo-link {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 32px;
 }
 
-.footer-geo-logo {
-    font-family: var(--font-primary);
-    font-size: 1.25rem;
-    font-weight: 800;
-    letter-spacing: 0.1em;
-    color: var(--color-text-primary);
-    text-transform: uppercase;
+.footer-logo-img {
+    height: 38px;
+    width: auto;
+    object-fit: contain;
+    filter: invert(1);
+    transition: transform var(--transition-fast);
+}
+
+.footer-logo-img:hover {
+    transform: scale(1.05);
 }
 
 .footer-social-strip {
@@ -1359,23 +1360,18 @@ a.method-value:hover {
 }
 
 /* Responsive adjustment for minimal footer */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     .footer-strip {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 32px;
-    }
-    
-    .footer-left-group {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 16px;
+        align-items: center;
+        text-align: center;
+        gap: 24px;
     }
     
     .footer-right-group {
         width: 100%;
-        justify-content: space-between;
-        gap: 16px;
+        justify-content: center;
+        gap: 32px;
     }
 }
 
