@@ -388,6 +388,16 @@ section {
     -webkit-text-stroke: 1px var(--color-accent);
 }
 
+.hero-subtitle-dev {
+    font-size: 1.1rem;
+    font-weight: 500;
+    font-family: var(--font-heading);
+    color: var(--color-accent);
+    margin-bottom: 20px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
 .hero-description {
     font-size: 1.15rem;
     color: var(--color-text-secondary);
