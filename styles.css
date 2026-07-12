@@ -11,9 +11,9 @@
     --color-text-primary: #FFFFFF;
     --color-text-secondary: #A1A1AA; /* Zinc 400 */
     --color-text-muted: #71717A; /* Zinc 500 */
-    --color-accent: #C5A880; /* Champagne / Warm Bronze */
-    --color-accent-hover: #D4AF37; /* Lighter Gold */
-    --color-accent-rgb: 197, 168, 128;
+    --color-accent: #E4E4E7; /* Zinc 200 (Minimalist Light Grey) */
+    --color-accent-hover: #FFFFFF; /* Pure White */
+    --color-accent-rgb: 228, 228, 231;
     
     /* Layout & Dimensions */
     --nav-height: 80px;
@@ -129,10 +129,10 @@ input, textarea, select {
     border: 1px solid var(--color-accent);
 }
 .btn-primary:hover {
-    background-color: #D6BA93;
-    border-color: #D6BA93;
+    background-color: var(--color-accent-hover);
+    border-color: var(--color-accent-hover);
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(197, 168, 128, 0.15);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.05);
 }
 
 .btn-secondary {
