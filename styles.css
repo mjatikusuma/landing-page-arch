@@ -384,8 +384,8 @@ section {
 }
 
 .hero-title span {
-    color: var(--color-accent);
-    -webkit-text-stroke: none;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--color-accent);
 }
 
 .hero-subtitle-dev {
