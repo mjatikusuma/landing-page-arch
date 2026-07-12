@@ -1801,3 +1801,81 @@ a.method-value:hover {
         top: 4px;
     }
 }
+
+/* ==========================================================================
+   CV DETAILS BLOCK (ABOUT SECTION)
+   ========================================================================== */
+.cv-details-container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-top: 40px;
+    text-align: left;
+}
+
+.cv-info-block {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.cv-block-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-primary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 8px;
+}
+
+.cv-block-icon {
+    width: 14px;
+    height: 14px;
+    color: var(--color-text-muted);
+}
+
+.cv-block-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding-left: 22px;
+}
+
+.cv-item-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+.cv-item-sub {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+}
+
+.cv-cert-list {
+    list-style: none;
+    padding-left: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.cv-cert-list li {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    position: relative;
+    padding-left: 14px;
+    line-height: 1.5;
+}
+
+.cv-cert-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--color-text-muted);
+}
