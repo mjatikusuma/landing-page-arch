@@ -613,115 +613,138 @@ section {
 }
 
 /* ==========================================================================
-   ABOUT SECTION
+   ABOUT (BIOGRAPHY) SECTION - SPLIT GALLERY STYLE
    ========================================================================== */
 .about {
+    padding: 100px 24px;
+    background-color: var(--color-bg);
     border-top: 1px solid var(--color-border);
 }
 
 .about-container {
     width: 100%;
     max-width: var(--container-max-width);
+    margin: 0 auto;
 }
 
 .about-grid {
     display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
+    grid-template-columns: 1.1fr 1.3fr;
     gap: 80px;
+    align-items: flex-start;
 }
 
-.about-quote {
-    margin-top: 40px;
-    border-left: 2px solid var(--color-accent);
-    padding-left: 24px;
-    position: relative;
+/* Left Column: Portrait Placeholder */
+.about-left {
+    width: 100%;
 }
 
-.quote-icon {
-    position: absolute;
-    top: -10px;
-    left: 24px;
-    opacity: 0.05;
-    width: 80px;
-    height: 80px;
-    color: var(--color-accent);
-}
-
-.about-quote p {
-    font-family: var(--font-heading);
-    font-size: 1.4rem;
-    font-weight: 400;
-    font-style: italic;
-    color: var(--color-text-primary);
-    line-height: 1.4;
-}
-
-.paragraph-lead {
-    font-size: 1.25rem;
-    color: var(--color-text-primary);
-    margin-bottom: 24px;
-    font-weight: 500;
-}
-
-.paragraph-body {
-    font-size: 1.05rem;
-    color: var(--color-text-secondary);
-    margin-bottom: 32px;
-}
-
-.principles-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-    margin-bottom: 48px;
-}
-
-.principle-item {
+.portrait-placeholder {
+    width: 100%;
+    aspect-ratio: 4/5;
+    background-color: var(--color-bg-card);
+    border: 1px dashed var(--color-border);
+    border-radius: var(--border-radius-md);
     display: flex;
     align-items: center;
-    gap: 12px;
+    justify-content: center;
+    transition: border-color var(--transition-medium);
 }
 
-.principle-check {
-    width: 18px;
-    height: 18px;
-    color: var(--color-accent);
-    flex-shrink: 0;
+.portrait-placeholder:hover {
+    border-color: var(--color-text-secondary);
 }
 
-.principle-item span {
-    font-size: 1rem;
-    font-weight: 500;
-    color: var(--color-text-primary);
-}
-
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    border-top: 1px solid var(--color-border);
-    padding-top: 40px;
-}
-
-.stat-card {
-    display: flex;
-    flex-direction: column;
-}
-
-.stat-num {
-    font-family: var(--font-heading);
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--color-text-primary);
-    line-height: 1;
-    margin-bottom: 8px;
-}
-
-.stat-lbl {
+.portrait-placeholder-text {
     font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
     color: var(--color-text-muted);
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+}
+
+/* Right Column: Text content block */
+.about-right {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    text-align: left;
+}
+
+.about-content-block {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.about-main-title {
+    font-family: var(--font-primary);
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin: 0;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+}
+
+.about-bio-text {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+    margin: 0;
+    max-width: 600px;
+}
+
+.about-sub-title {
+    font-family: var(--font-primary);
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin: 0;
+    letter-spacing: -0.01em;
+}
+
+.about-services-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.about-services-list li {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+    position: relative;
+    padding-left: 0;
+    transition: color var(--transition-fast);
+}
+
+.about-services-list li:hover {
+    color: var(--color-text-primary);
+}
+
+.about-location-text {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+    margin: 0;
+}
+
+/* Responsive design for about section */
+@media (max-width: 992px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+    
+    .about-main-title {
+        font-size: 2.8rem;
+    }
+    
+    .about-sub-title {
+        font-size: 1.5rem;
+    }
 }
 
 /* ==========================================================================
