@@ -130,14 +130,37 @@ document.addEventListener('DOMContentLoaded', () => {
             formSubmitBtn.innerHTML = `Sending... <i data-lucide="loader-2" class="btn-icon animate-spin"></i>`;
             if (typeof lucide !== 'undefined') lucide.createIcons();
 
-            // Simulate API request (1.5 seconds)
-            setTimeout(() => {
-                const name = document.getElementById('name').value;
-                
-                // Form response simulation
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const projectType = document.getElementById('project-type').value;
+            const message = document.getElementById('message').value;
+
+            // FormSubmit JSON Payload
+            const payload = {
+                name: name,
+                email: email,
+                "Project Type": projectType,
+                message: message,
+                _subject: "New Portfolio Inquiry from " + name
+            };
+
+            fetch("https://formsubmit.co/ajax/muhammmadjatikusuma.work@gmail.com", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json"
+                },
+                body: JSON.stringify(payload)
+            })
+            .then(res => {
+                if (!res.ok) throw new Error("Network response was not ok");
+                return res.json();
+            })
+            .then(data => {
+                // Success feedback
                 formFeedback.classList.remove('hidden', 'success', 'error');
                 formFeedback.classList.add('success');
-                formFeedback.innerHTML = `<strong>Thank you, ${name}!</strong> Your inquiry has been sent successfully. Our studio team will review your brief and contact you within 24 hours.`;
+                formFeedback.innerHTML = `<strong>Thank you, ${name}!</strong> Your inquiry has been sent successfully. I will review your brief and contact you within 24 hours.`;
                 
                 // Reset submit button and form
                 formSubmitBtn.disabled = false;
@@ -156,8 +179,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 setTimeout(() => {
                     formFeedback.classList.add('hidden');
                 }, 8000);
-
-            }, 1500);
+            })
+            .catch(err => {
+                console.error(err);
+                // Error feedback
+                formFeedback.classList.remove('hidden', 'success', 'error');
+                formFeedback.classList.add('error');
+                formFeedback.innerHTML = `<strong>Oops!</strong> Failed to send. Please try again or email me directly at muhammmadjatikusuma.work@gmail.com.`;
+                
+                // Reset submit button
+                formSubmitBtn.disabled = false;
+                formSubmitBtn.innerHTML = `Send Inquiry <i data-lucide="send" class="btn-icon"></i>`;
+                if (typeof lucide !== 'undefined') lucide.createIcons();
+            });
         });
     }
 
