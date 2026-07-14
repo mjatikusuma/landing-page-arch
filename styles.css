@@ -634,33 +634,30 @@ section {
     align-items: flex-start;
 }
 
-/* Left Column: Portrait Placeholder */
+/* Left Column: Portrait Photo */
 .about-left {
     width: 100%;
 }
 
-.portrait-placeholder {
+.about-portrait-wrapper {
     width: 100%;
     aspect-ratio: 4/5;
     background-color: var(--color-bg-card);
-    border: 1px dashed var(--color-border);
+    border: 1px solid var(--color-border);
     border-radius: var(--border-radius-md);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: border-color var(--transition-medium);
+    overflow: hidden;
+    position: relative;
 }
 
-.portrait-placeholder:hover {
-    border-color: var(--color-text-secondary);
+.about-portrait-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
 }
 
-.portrait-placeholder-text {
-    font-size: 0.85rem;
-    font-weight: 500;
-    letter-spacing: 0.05em;
-    color: var(--color-text-muted);
-    text-transform: uppercase;
+.about-portrait-wrapper:hover .about-portrait-img {
+    transform: scale(1.05);
 }
 
 /* Right Column: Text content block */
