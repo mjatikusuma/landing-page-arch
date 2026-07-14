@@ -384,6 +384,10 @@ section {
 }
 
 .hero-title span {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.15;
     color: transparent;
     -webkit-text-stroke: 1px var(--color-text-primary);
 }
@@ -1577,7 +1581,11 @@ a.method-value:hover {
     }
     
     .hero-title {
-        font-size: 2.6rem;
+        font-size: 2rem;
+    }
+    
+    .hero-title span {
+        font-size: 2.8rem;
     }
     
     .hero-actions {
