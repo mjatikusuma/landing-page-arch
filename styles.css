@@ -1333,25 +1333,19 @@ a.method-value:hover {
     transform: scale(1.05);
 }
 
-.footer-social-strip {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.footer-social-strip a {
+.footer-instagram-link {
     color: var(--color-text-secondary);
     transition: color var(--transition-fast), transform var(--transition-fast);
     display: flex;
     align-items: center;
 }
 
-.footer-social-strip a:hover {
+.footer-instagram-link:hover {
     color: var(--color-text-primary);
     transform: translateY(-2px);
 }
 
-.footer-social-strip i {
+.footer-instagram-link i {
     width: 18px;
     height: 18px;
 }
