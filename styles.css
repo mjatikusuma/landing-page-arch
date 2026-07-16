@@ -1334,15 +1334,14 @@ a.method-value:hover {
 }
 
 .footer-instagram-link {
-    color: var(--color-text-primary);
-    opacity: 0.8;
-    transition: opacity var(--transition-fast), transform var(--transition-fast);
+    color: var(--color-text-secondary);
+    transition: color var(--transition-fast), transform var(--transition-fast);
     display: flex;
     align-items: center;
 }
 
 .footer-instagram-link:hover {
-    opacity: 1;
+    color: var(--color-text-primary);
     transform: translateY(-2px);
 }
 
