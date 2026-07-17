@@ -400,6 +400,13 @@ section {
     margin-left: 4px;
 }
 
+.typing-cursor-sub {
+    animation: blink-cursor 1s step-end infinite;
+    font-weight: 300;
+    color: var(--color-text-secondary);
+    margin-left: 4px;
+}
+
 @keyframes blink-cursor {
     from, to { color: transparent }
     50% { color: var(--color-text-primary); }
