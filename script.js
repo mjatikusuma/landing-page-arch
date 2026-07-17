@@ -257,41 +257,4 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     document.head.appendChild(style);
 
-    // ==========================================================================
-    // HERO TYPING EFFECT FOR "JATI KUSUMA"
-    // ==========================================================================
-    const typingTextElement = document.getElementById('typing-text');
-    if (typingTextElement) {
-        const textToType = "Jati Kusuma";
-        let index = 0;
-        const typingSpeed = 180; // Speed of typing in ms
-        const delayBetweenCycles = 3500; // Wait time at the end before restarting
-        
-        const typeEffect = () => {
-            if (index < textToType.length) {
-                typingTextElement.textContent += textToType.charAt(index);
-                index++;
-                setTimeout(typeEffect, typingSpeed);
-            } else {
-                // Done typing. Wait and then erase!
-                setTimeout(() => {
-                    eraseEffect();
-                }, delayBetweenCycles);
-            }
-        };
-
-        const eraseEffect = () => {
-            if (index > 0) {
-                typingTextElement.textContent = textToType.substring(0, index - 1);
-                index--;
-                setTimeout(eraseEffect, typingSpeed / 2.5); // Erase faster!
-            } else {
-                // Done erasing. Wait and restart typing!
-                setTimeout(typeEffect, 600);
-            }
-        };
-
-        // Start typing after a short delay
-        setTimeout(typeEffect, 1000);
-    }
 });
