@@ -28,7 +28,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles.css?v=39">
+    <link rel="stylesheet" href="styles.css?v=40">
     
     <!-- Lucide Icons (CDN) -->
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -437,6 +437,44 @@
     </footer>
 
     <!-- Script Entry -->
-    <script src="script.js?v=39"></script>
+    <script src="script.js?v=40"></script>
+    
+    <!-- Inline Typing Effect for Jati Kusuma -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const typingTextElement = document.getElementById('typing-text');
+            if (typingTextElement) {
+                const textToType = "Jati Kusuma";
+                let index = 0;
+                const typingSpeed = 150; 
+                const delayBetweenCycles = 3500; 
+                
+                function typeEffect() {
+                    if (index < textToType.length) {
+                        typingTextElement.textContent += textToType.charAt(index);
+                        index++;
+                        setTimeout(typeEffect, typingSpeed);
+                    } else {
+                        // Done typing. Wait and then erase!
+                        setTimeout(eraseEffect, delayBetweenCycles);
+                    }
+                }
+
+                function eraseEffect() {
+                    if (index > 0) {
+                        typingTextElement.textContent = textToType.substring(0, index - 1);
+                        index--;
+                        setTimeout(eraseEffect, typingSpeed / 2.5); // Erase faster!
+                    } else {
+                        // Done erasing. Wait and restart typing!
+                        setTimeout(typeEffect, 600);
+                    }
+                }
+
+                // Start typing after a short delay
+                setTimeout(typeEffect, 1000);
+            }
+        });
+    </script>
 </body>
 </html>
