@@ -28,7 +28,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles.css?v=40">
+    <link rel="stylesheet" href="styles.css?v=41">
     
     <!-- Lucide Icons (CDN) -->
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -68,7 +68,7 @@
             <div class="hero-container">
                 <div class="hero-content scroll-reveal">
 
-                    <h1 class="hero-title">Hello, World! I'm <br><span>Muhammad <span id="typing-text"></span><span class="typing-cursor">|</span></span></h1>
+                    <h1 class="hero-title"><span id="typing-text"></span><span class="typing-cursor">|</span><br><span>Muhammad Jati Kusuma</span></h1>
                     <p class="hero-subtitle-dev">Architecture Designer | Interior Designer</p>
                     <p class="hero-description">
                         I am a passionate architectural and interior designer dedicated to crafting minimalist, functional, and enduring spatial experiences.
@@ -437,17 +437,17 @@
     </footer>
 
     <!-- Script Entry -->
-    <script src="script.js?v=40"></script>
+    <script src="script.js?v=41"></script>
     
-    <!-- Inline Typing Effect for Jati Kusuma -->
+    <!-- Inline Typing Effect for Hello, World! I'm -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const typingTextElement = document.getElementById('typing-text');
             if (typingTextElement) {
-                const textToType = "Jati Kusuma";
+                const textToType = "Hello, World! I'm";
                 let index = 0;
-                const typingSpeed = 150; 
-                const delayBetweenCycles = 3500; 
+                const typingSpeed = 120; 
+                const delayBetweenCycles = 4000; 
                 
                 function typeEffect() {
                     if (index < textToType.length) {
