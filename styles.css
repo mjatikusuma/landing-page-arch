@@ -383,7 +383,7 @@ section {
     margin-bottom: 16px;
 }
 
-.hero-title span {
+.hero-title .hero-name {
     display: inline-block;
     margin-top: 6px;
     font-size: clamp(2.5rem, 5vw, 4rem);
