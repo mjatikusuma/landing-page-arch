@@ -28,7 +28,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles.css?v=44">
+    <link rel="stylesheet" href="styles.css?v=45">
     
     <!-- Lucide Icons (CDN) -->
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -69,7 +69,7 @@
                 <div class="hero-content scroll-reveal">
 
                     <h1 class="hero-title"><span id="typing-text"></span><span class="typing-cursor">_</span><br><span class="hero-name">Muhammad Jati Kusuma</span></h1>
-                    <p class="hero-subtitle-dev">Architecture Designer | Interior Designer</p>
+                    <p class="hero-subtitle-dev"><span id="typing-sub"></span><span class="typing-cursor-sub">_</span></p>
                     <p class="hero-description">
                         I am a passionate architectural and interior designer dedicated to crafting minimalist, functional, and enduring spatial experiences.
                     </p>
@@ -436,15 +436,15 @@
         </div>
     </footer>
 
-    <!-- Script Entry -->
-    <script src="script.js?v=44"></script>
+    <!-    <script src="script.js?v=45"></script>
     
-    <!-- Inline Typing Effect for Hello, World! I'm -->
+    <!-- Inline Typing Effects -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Typing Effect 1: Hello, World! I'm (Looping)
             const typingTextElement = document.getElementById('typing-text');
             if (typingTextElement) {
-                const textToType = "Hello, World! I'm.";
+                const textToType = "Hello, World! I'm";
                 let index = 0;
                 const typingSpeed = 120; 
                 const delayBetweenCycles = 4000; 
@@ -473,6 +473,33 @@
 
                 // Start typing after a short delay
                 setTimeout(typeEffect, 1000);
+            }
+
+            // Typing Effect 2: Architecture Designer | Interior Designer (One-Time)
+            const typingSubElement = document.getElementById('typing-sub');
+            const cursorSubElement = document.querySelector('.typing-cursor-sub');
+            if (typingSubElement) {
+                const textToTypeSub = "Architecture Designer | Interior Designer";
+                let indexSub = 0;
+                const typingSpeedSub = 80; 
+                
+                function typeSubEffect() {
+                    if (indexSub < textToTypeSub.length) {
+                        typingSubElement.textContent += textToTypeSub.charAt(indexSub);
+                        indexSub++;
+                        setTimeout(typeSubEffect, typingSpeedSub);
+                    } else {
+                        // Done typing. Hide cursor after 1.5 seconds of blinking
+                        setTimeout(() => {
+                            if (cursorSubElement) {
+                                cursorSubElement.style.display = 'none';
+                            }
+                        }, 1500);
+                    }
+                }
+
+                // Start typing subtitle after 2.5 seconds (choreographed layout entry)
+                setTimeout(typeSubEffect, 2500);
             }
         });
     </script>
