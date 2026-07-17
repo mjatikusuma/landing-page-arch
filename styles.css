@@ -392,6 +392,19 @@ section {
     -webkit-text-stroke: 1px var(--color-text-primary);
 }
 
+.typing-cursor {
+    animation: blink-cursor 1s step-end infinite;
+    font-weight: 300;
+    color: var(--color-text-primary);
+    -webkit-text-stroke: 0px !important;
+    margin-left: 4px;
+}
+
+@keyframes blink-cursor {
+    from, to { color: transparent }
+    50% { color: var(--color-text-primary); }
+}
+
 .hero-subtitle-dev {
     font-size: clamp(0.95rem, 1.8vw, 1.15rem);
     font-weight: 500;
