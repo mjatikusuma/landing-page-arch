@@ -1441,19 +1441,28 @@ a.method-value:hover {
     transform: scale(1.05);
 }
 
-.footer-instagram-link {
+.footer-socials {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-instagram-link,
+.footer-email-link {
     color: var(--color-text-secondary);
     transition: color var(--transition-fast), transform var(--transition-fast);
     display: flex;
     align-items: center;
 }
 
-.footer-instagram-link:hover {
+.footer-instagram-link:hover,
+.footer-email-link:hover {
     color: var(--color-text-primary);
     transform: translateY(-2px);
 }
 
-.footer-instagram-link svg {
+.footer-instagram-link svg,
+.footer-email-link svg {
     width: 18px;
     height: 18px;
 }
