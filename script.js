@@ -126,8 +126,10 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             
             // Set loading state
+            const currentLang = localStorage.getItem('lang') || 'en';
             formSubmitBtn.disabled = true;
-            formSubmitBtn.innerHTML = `Sending... <i data-lucide="loader-2" class="btn-icon animate-spin"></i>`;
+            const loadingText = currentLang === 'id' ? 'Mengirim...' : 'Sending...';
+            formSubmitBtn.innerHTML = `${loadingText} <i data-lucide="loader-2" class="btn-icon animate-spin"></i>`;
             if (typeof lucide !== 'undefined') lucide.createIcons();
 
             const name = document.getElementById('name').value;
@@ -160,11 +162,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Success feedback
                 formFeedback.classList.remove('hidden', 'success', 'error');
                 formFeedback.classList.add('success');
-                formFeedback.innerHTML = `<strong>Thank you, ${name}!</strong> Your inquiry has been sent successfully. I will review your brief and contact you within 24 hours.`;
+                
+                if (currentLang === 'id') {
+                    formFeedback.innerHTML = `<strong>Terima kasih, ${name}!</strong> Pesan Anda telah berhasil dikirim. Saya akan meninjau detailnya dan menghubungi Anda kembali dalam waktu 24 jam.`;
+                } else {
+                    formFeedback.innerHTML = `<strong>Thank you, ${name}!</strong> Your inquiry has been sent successfully. I will review your brief and contact you within 24 hours.`;
+                }
                 
                 // Reset submit button and form
                 formSubmitBtn.disabled = false;
-                formSubmitBtn.innerHTML = `Send Inquiry <i data-lucide="send" class="btn-icon"></i>`;
+                const buttonText = currentLang === 'id' ? 'Kirim Pesan' : 'Send Inquiry';
+                formSubmitBtn.innerHTML = `${buttonText} <i data-lucide="send" class="btn-icon"></i>`;
                 if (typeof lucide !== 'undefined') lucide.createIcons();
                 
                 contactForm.reset();
@@ -185,11 +193,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Error feedback
                 formFeedback.classList.remove('hidden', 'success', 'error');
                 formFeedback.classList.add('error');
-                formFeedback.innerHTML = `<strong>Oops!</strong> Failed to send. Please try again or email me directly at muhammmadjatikusuma.work@gmail.com.`;
+                
+                if (currentLang === 'id') {
+                    formFeedback.innerHTML = `<strong>Oops!</strong> Gagal mengirim pesan. Silakan coba lagi atau kirim email langsung ke muhammmadjatikusuma.work@gmail.com.`;
+                } else {
+                    formFeedback.innerHTML = `<strong>Oops!</strong> Failed to send. Please try again or email me directly at muhammmadjatikusuma.work@gmail.com.`;
+                }
                 
                 // Reset submit button
                 formSubmitBtn.disabled = false;
-                formSubmitBtn.innerHTML = `Send Inquiry <i data-lucide="send" class="btn-icon"></i>`;
+                const buttonText = currentLang === 'id' ? 'Kirim Pesan' : 'Send Inquiry';
+                formSubmitBtn.innerHTML = `${buttonText} <i data-lucide="send" class="btn-icon"></i>`;
                 if (typeof lucide !== 'undefined') lucide.createIcons();
             });
         });
@@ -256,5 +270,210 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     `;
     document.head.appendChild(style);
+
+    // ==========================================================================
+    // MULTI-LANGUAGE SYSTEM (ENGLISH / INDONESIAN)
+    // ==========================================================================
+    const translations = {
+        en: {
+            "nav-about": "About",
+            "nav-experience": "Experience",
+            "nav-education": "Education",
+            "nav-projects": "Projects",
+            "nav-btn-chat": "Let's Chat",
+            "hero-description": "I am a passionate architectural and interior designer dedicated to crafting minimalist, functional, and enduring spatial experiences.",
+            "hero-btn-explore": "Explore Projects",
+            "hero-btn-about": "About Me",
+            "hero-next-proj": "Next Project",
+            "about-hdr": "About",
+            "about-bio-text": "I am an Architecture graduate from Universitas Sriwijaya with professional experience in architectural design, spatial planning, and interior detailing. My work spans public infrastructure, healthcare clinics, and educational spaces.",
+            "about-services-hdr": "Services",
+            "about-service-1": "Architectural Design",
+            "about-service-2": "Interior Design",
+            "about-service-3": "3D Modeling & Visualization",
+            "about-service-4": "DED (Detail Engineering Design) Drafting",
+            "about-location-hdr": "Location",
+            "about-location-text": "Indonesia but travel everywhere.",
+            "exp-sub-hdr": "Timeline",
+            "exp-title-hdr": "Experience",
+            "exp-date-1": "May 2026 – Present",
+            "exp-role-1": "Junior Architect",
+            "exp-desc-1": "Developing conceptual designs, creating 3D models and rendering visualizations, and drafting interior DED (Detail Engineering Design) drawings.",
+            "exp-role-2": "Junior Architect",
+            "exp-company-2": "Independent Consultant Architect",
+            "exp-desc-2": "Conducted surveys, site analyses, developed DED drawings, and processed technical administrations for PBG and SLF building permits.",
+            "exp-role-3": "Junior Architect",
+            "exp-desc-3": "Developed conceptual designs, created 3D models, rendering, and animations for client presentations, and drafted DED construction drawings.",
+            "exp-role-4": "Architectural Technical Staff",
+            "exp-desc-4": "Developed initial design layouts, created moodboards, produced 3D visualization renders, and coordinated with structural and MEP teams to ensure design integrity.",
+            "edu-sub-hdr": "Qualifications",
+            "edu-title-hdr": "Education & Credentials",
+            "edu-degree-1": "Bachelor's Degree in Architecture Engineering",
+            "edu-degree-2": "Ahli Muda Desain Interior",
+            "edu-degree-3": "Ahli Muda Teknik Bangunan Gedung",
+            "edu-degree-4": "Building Information Modeling (BIM) Arsitektur",
+            "proj-sub-hdr": "Portfolio",
+            "proj-title-hdr": "Selected Projects",
+            "proj-filter-all": "All Projects",
+            "proj-filter-infra": "Infrastructure",
+            "proj-filter-interior": "Interior",
+            "proj-cat-interior": "Interior",
+            "proj-cat-infra": "Infrastructure",
+            "proj-loc-1": "Palembang, Indonesia — 2026",
+            "proj-loc-2": "Bogor, Indonesia — 2026",
+            "contact-sub-hdr": "Let's Connect",
+            "contact-title-hdr": "Ready to build your masterpiece?",
+            "contact-desc": "Whether you want to commission a residential project, discuss a commercial masterplan, or ask a simple question, we'd love to hear from you.",
+            "contact-lbl-name": "Your Name",
+            "contact-lbl-email": "Email Address",
+            "contact-lbl-brief": "Project Brief & Details",
+            "contact-opt-default": "Project Type",
+            "contact-opt-res": "Residential Design",
+            "contact-opt-com": "Commercial / Public",
+            "contact-opt-int": "Interior Styling",
+            "contact-opt-other": "Other Inquiry",
+            "contact-btn-send": "Send Inquiry",
+            "footer-copyright": "All content Copyright © 2026 Muhammad Jati Kusuma"
+        },
+        id: {
+            "nav-about": "Tentang Saya",
+            "nav-experience": "Pengalaman",
+            "nav-education": "Pendidikan",
+            "nav-projects": "Proyek Pilihan",
+            "nav-btn-chat": "Hubungi Saya",
+            "hero-description": "Saya adalah perancang arsitektur dan interior yang berdedikasi untuk menciptakan pengalaman spasial yang minimalis, fungsional, dan abadi.",
+            "hero-btn-explore": "Jelajahi Proyek",
+            "hero-btn-about": "Tentang Saya",
+            "hero-next-proj": "Proyek Berikutnya",
+            "about-hdr": "Biografi",
+            "about-bio-text": "Saya adalah lulusan Teknik Arsitektur dari Universitas Sriwijaya dengan pengalaman profesional dalam desain arsitektur, perencanaan tata ruang, dan detail interior. Karya saya mencakup infrastruktur publik, klinik kesehatan, dan ruang pendidikan.",
+            "about-services-hdr": "Layanan",
+            "about-service-1": "Desain Arsitektur",
+            "about-service-2": "Desain Interior",
+            "about-service-3": "Pemodelan 3D & Visualisasi",
+            "about-service-4": "Penyusunan Gambar Kerja (DED)",
+            "about-location-hdr": "Lokasi",
+            "about-location-text": "Indonesia, bersedia bekerja di mana saja.",
+            "exp-sub-hdr": "Linimasa",
+            "exp-title-hdr": "Pengalaman",
+            "exp-date-1": "Mei 2026 – Sekarang",
+            "exp-role-1": "Arsitek Junior",
+            "exp-desc-1": "Mengembangkan desain konseptual, membuat model 3D dan rendering visualisasi, serta menyusun gambar kerja detail (DED) interior.",
+            "exp-role-2": "Arsitek Junior",
+            "exp-company-2": "Arsitek Konsultan Independen",
+            "exp-desc-2": "Melakukan survei, analisis tapak, menyusun gambar kerja DED, dan mengurus administrasi teknis untuk perizinan bangunan gedung PBG dan SLF.",
+            "exp-role-3": "Arsitek Junior",
+            "exp-desc-3": "Mengembangkan desain konseptual, membuat model 3D, rendering, dan animasi untuk presentasi klien, serta menyusun gambar konstruksi DED.",
+            "exp-role-4": "Staf Teknis Arsitektur",
+            "exp-desc-4": "Mengembangkan tata letak desain awal, membuat moodboard, memproduksi rendering visualisasi 3D, dan berkoordinasi dengan tim struktur serta MEP untuk memastikan integritas desain.",
+            "edu-sub-hdr": "Kualifikasi",
+            "edu-title-hdr": "Pendidikan & Sertifikasi",
+            "edu-degree-1": "Sarjana Teknik Arsitektur",
+            "edu-degree-2": "Ahli Muda Desain Interior",
+            "edu-degree-3": "Ahli Muda Teknik Bangunan Gedung",
+            "edu-degree-4": "BIM (Building Information Modeling) Arsitektur",
+            "proj-sub-hdr": "Portofolio",
+            "proj-title-hdr": "Proyek Pilihan",
+            "proj-filter-all": "Semua Proyek",
+            "proj-filter-infra": "Infrastruktur",
+            "proj-filter-interior": "Interior",
+            "proj-cat-interior": "Interior",
+            "proj-cat-infra": "Infrastruktur",
+            "proj-loc-1": "Palembang, Indonesia — 2026",
+            "proj-loc-2": "Bogor, Indonesia — 2026",
+            "contact-sub-hdr": "Mari Terhubung",
+            "contact-title-hdr": "Siap membangun mahakarya Anda?",
+            "contact-desc": "Apakah Anda ingin memesan desain rumah tinggal, mendiskusikan masterplan komersial, atau mengajukan pertanyaan sederhana, kami akan dengan senang hati mendengarnya.",
+            "contact-lbl-name": "Nama Anda",
+            "contact-lbl-email": "Alamat Email",
+            "contact-lbl-brief": "Ringkasan & Detail Proyek",
+            "contact-opt-default": "Tipe Proyek",
+            "contact-opt-res": "Desain Residensial",
+            "contact-opt-com": "Komersial / Publik",
+            "contact-opt-int": "Desain Interior",
+            "contact-opt-other": "Pertanyaan Lainnya",
+            "contact-btn-send": "Kirim Pesan",
+            "footer-copyright": "Semua konten Hak Cipta © 2026 Muhammad Jati Kusuma"
+        }
+    };
+
+    const updateLanguage = (lang) => {
+        document.querySelectorAll('[data-translate]').forEach(el => {
+            const key = el.getAttribute('data-translate');
+            if (translations[lang] && translations[lang][key]) {
+                if (el.tagName === 'OPTION') {
+                    el.textContent = translations[lang][key];
+                } else if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                    el.placeholder = translations[lang][key];
+                } else {
+                    el.textContent = translations[lang][key];
+                }
+            }
+        });
+        
+        // Update language label
+        const langLabel = document.getElementById('lang-label');
+        if (langLabel) {
+            langLabel.textContent = lang.toUpperCase();
+        }
+
+        // Save selection
+        localStorage.setItem('lang', lang);
+        
+        // Trigger inline typing scripts if defined
+        if (typeof window.changeTypingLanguage === 'function') {
+            window.changeTypingLanguage(lang);
+        }
+    };
+
+    const langToggle = document.getElementById('lang-toggle');
+    if (langToggle) {
+        langToggle.addEventListener('click', () => {
+            const currentLang = localStorage.getItem('lang') || 'en';
+            const nextLang = currentLang === 'en' ? 'id' : 'en';
+            updateLanguage(nextLang);
+        });
+    }
+
+    // Initialize Language on load
+    const savedLang = localStorage.getItem('lang') || 'en';
+    updateLanguage(savedLang);
+
+
+    // ==========================================================================
+    // THEME SWITCHER SYSTEM (DARK / LIGHT MODE)
+    // ==========================================================================
+    const themeToggle = document.getElementById('theme-toggle');
+    const sunIcon = document.querySelector('.theme-icon-light');
+    const moonIcon = document.querySelector('.theme-icon-dark');
+
+    const updateTheme = (theme) => {
+        if (theme === 'light') {
+            document.documentElement.classList.add('light-theme');
+            if (sunIcon && moonIcon) {
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+            }
+        } else {
+            document.documentElement.classList.remove('light-theme');
+            if (sunIcon && moonIcon) {
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+            }
+        }
+        localStorage.setItem('theme', theme);
+    };
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = localStorage.getItem('theme') || 'dark';
+            const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            updateTheme(nextTheme);
+        });
+    }
+
+    // Initialize Theme on load
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    updateTheme(savedTheme);
 
 });
