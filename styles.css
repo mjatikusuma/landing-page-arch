@@ -74,6 +74,10 @@ body.light-theme,
     background-color: rgba(0, 0, 0, 0.015);
 }
 
+.light-theme .hero-title .hero-name {
+    -webkit-text-stroke: 1.8px var(--color-text-primary);
+}
+
 /* Navigation Controls (Theme & Lang Switchers) */
 .nav-controls {
     display: flex;
