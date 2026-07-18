@@ -43,15 +43,30 @@
             </a>
             
             <nav class="nav-links" id="nav-links">
-                <a href="#about" class="nav-link">About</a>
-                <a href="#experience" class="nav-link">Experience</a>
-                <a href="#education" class="nav-link">Education</a>
-                <a href="#portfolio" class="nav-link">Projects</a>
-                <a href="#contact" class="nav-link btn-secondary-mobile">Let's Chat</a>
+                <a href="#about" class="nav-link" data-translate="nav-about">About</a>
+                <a href="#experience" class="nav-link" data-translate="nav-experience">Experience</a>
+                <a href="#education" class="nav-link" data-translate="nav-education">Education</a>
+                <a href="#portfolio" class="nav-link" data-translate="nav-projects">Projects</a>
+                <a href="#contact" class="nav-link btn-secondary-mobile" data-translate="nav-btn-chat">Let's Chat</a>
             </nav>
             
             <div class="nav-actions">
-                <a href="#contact" class="btn btn-secondary">Let's Chat</a>
+                <!-- Controls: Language & Theme -->
+                <div class="nav-controls">
+                    <!-- Language Toggle -->
+                    <button class="nav-control-btn lang-toggle" id="lang-toggle" aria-label="Change Language">
+                        <i data-lucide="globe"></i>
+                        <span id="lang-label">EN</span>
+                    </button>
+                    
+                    <!-- Theme Toggle -->
+                    <button class="nav-control-btn theme-toggle" id="theme-toggle" aria-label="Toggle Light/Dark Theme">
+                        <i data-lucide="moon" class="theme-icon-dark"></i>
+                        <i data-lucide="sun" class="theme-icon-light hidden"></i>
+                    </button>
+                </div>
+                
+                <a href="#contact" class="btn btn-secondary" id="nav-btn-chat" data-translate="nav-btn-chat">Let's Chat</a>
                 <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Menu">
                     <i data-lucide="menu" class="menu-icon"></i>
                     <i data-lucide="x" class="close-icon hidden"></i>
@@ -70,14 +85,14 @@
 
                     <h1 class="hero-title"><span id="typing-text"></span><span class="typing-cursor">_</span><br><span class="hero-name">Muhammad Jati Kusuma</span></h1>
                     <p class="hero-subtitle-dev"><span id="typing-sub"></span><span class="typing-cursor-sub">_</span></p>
-                    <p class="hero-description">
+                    <p class="hero-description" data-translate="hero-description">
                         I am a passionate architectural and interior designer dedicated to crafting minimalist, functional, and enduring spatial experiences.
                     </p>
                     <div class="hero-actions">
                         <a href="#portfolio" class="btn btn-primary">
-                            Explore Projects <i data-lucide="arrow-right" class="btn-icon"></i>
+                            <span data-translate="hero-btn-explore">Explore Projects</span> <i data-lucide="arrow-right" class="btn-icon"></i>
                         </a>
-                        <a href="#about" class="btn btn-tertiary">About Me</a>
+                        <a href="#about" class="btn btn-tertiary" data-translate="hero-btn-about">About Me</a>
                     </div>
                 </div>
                 
@@ -96,14 +111,14 @@
                             <div class="slide">
                                 <img src="assets/project-2.jpg" alt="Pull Padel & Barber Preview" class="slide-thumb">
                                 <div class="slide-info">
-                                    <span class="floating-card-label">Next Project</span>
+                                    <span class="floating-card-label" data-translate="hero-next-proj">Next Project</span>
                                     <span class="floating-card-val">Pull Padel & Barber</span>
                                 </div>
                             </div>
                             <div class="slide active">
                                 <img src="assets/project-3.jpg" alt="Parking Building RS PMI Bogor Preview" class="slide-thumb">
                                 <div class="slide-info">
-                                    <span class="floating-card-label">Next Project</span>
+                                    <span class="floating-card-label" data-translate="hero-next-proj">Next Project</span>
                                     <span class="floating-card-val">Parking Building RS PMI Bogor</span>
                                 </div>
                             </div>
@@ -129,25 +144,25 @@
                     <!-- Right: Text Content -->
                     <div class="about-right scroll-reveal">
                         <div class="about-content-block">
-                            <h2 class="about-main-title">About</h2>
-                            <p class="about-bio-text">
+                            <h2 class="about-main-title" data-translate="about-hdr">About</h2>
+                            <p class="about-bio-text" data-translate="about-bio-text">
                                 I am an Architecture graduate from Universitas Sriwijaya with professional experience in architectural design, spatial planning, and interior detailing. My work spans public infrastructure, healthcare clinics, and educational spaces.
                             </p>
                         </div>
 
                         <div class="about-content-block">
-                            <h3 class="about-sub-title">Services</h3>
+                            <h3 class="about-sub-title" data-translate="about-services-hdr">Services</h3>
                             <ul class="about-services-list">
-                                <li>Architectural Design</li>
-                                <li>Interior Design</li>
-                                <li>3D Modeling & Visualization</li>
-                                <li>DED (Detail Engineering Design) Drafting</li>
+                                <li data-translate="about-service-1">Architectural Design</li>
+                                <li data-translate="about-service-2">Interior Design</li>
+                                <li data-translate="about-service-3">3D Modeling & Visualization</li>
+                                <li data-translate="about-service-4">DED (Detail Engineering Design) Drafting</li>
                             </ul>
                         </div>
 
                         <div class="about-content-block">
-                            <h3 class="about-sub-title">Location</h3>
-                            <p class="about-location-text">Indonesia but travel everywhere.</p>
+                            <h3 class="about-sub-title" data-translate="about-location-hdr">Location</h3>
+                            <p class="about-location-text" data-translate="about-location-text">Indonesia but travel everywhere.</p>
                         </div>
                     </div>
                 </div>
@@ -158,8 +173,8 @@
         <section class="experience" id="experience">
             <div class="experience-container">
                 <div class="section-header scroll-reveal centered">
-                    <span class="section-subtitle">Timeline</span>
-                    <h2 class="section-title">Experience</h2>
+                    <span class="section-subtitle" data-translate="exp-sub-hdr">Timeline</span>
+                    <h2 class="section-title" data-translate="exp-title-hdr">Experience</h2>
                 </div>
                 
                 <div class="timeline scroll-reveal">
@@ -183,9 +198,9 @@
                             <span class="timeline-location">Muara Enim, ID</span>
                         </div>
                         <div class="timeline-content">
-                            <h3 class="timeline-role">Junior Architect</h3>
-                            <h4 class="timeline-company">Independent Consultant Architect</h4>
-                            <p class="timeline-desc">Conducted surveys, site analyses, developed DED drawings, and processed technical administrations for PBG and SLF building permits.</p>
+                            <h3 class="timeline-role" data-translate="exp-role-2">Junior Architect</h3>
+                            <h4 class="timeline-company" data-translate="exp-company-2">Independent Consultant Architect</h4>
+                            <p class="timeline-desc" data-translate="exp-desc-2">Conducted surveys, site analyses, developed DED drawings, and processed technical administrations for PBG and SLF building permits.</p>
                         </div>
                     </div>
 
@@ -196,9 +211,9 @@
                             <span class="timeline-location">Muara Enim, ID</span>
                         </div>
                         <div class="timeline-content">
-                            <h3 class="timeline-role">Junior Architect</h3>
+                            <h3 class="timeline-role" data-translate="exp-role-3">Junior Architect</h3>
                             <h4 class="timeline-company">CV. Uwais Putra Mandiri</h4>
-                            <p class="timeline-desc">Developed conceptual designs, created 3D models, rendering, and animations for client presentations, and drafted DED construction drawings.</p>
+                            <p class="timeline-desc" data-translate="exp-desc-3">Developed conceptual designs, created 3D models, rendering, and animations for client presentations, and drafted DED construction drawings.</p>
                         </div>
                     </div>
 
@@ -209,9 +224,9 @@
                             <span class="timeline-location">Palembang, ID</span>
                         </div>
                         <div class="timeline-content">
-                            <h3 class="timeline-role">Architectural Technical Staff</h3>
+                            <h3 class="timeline-role" data-translate="exp-role-4">Architectural Technical Staff</h3>
                             <h4 class="timeline-company">PT. Cahaya Sriwijaya Abadi</h4>
-                            <p class="timeline-desc">Developed initial design layouts, created moodboards, produced 3D visualization renders, and coordinated with structural and MEP teams to ensure design integrity.</p>
+                            <p class="timeline-desc" data-translate="exp-desc-4">Developed initial design layouts, created moodboards, produced 3D visualization renders, and coordinated with structural and MEP teams to ensure design integrity.</p>
                         </div>
                     </div>
                 </div>
@@ -222,8 +237,8 @@
         <section class="education-section" id="education">
             <div class="education-container">
                 <div class="section-header scroll-reveal">
-                    <span class="section-subtitle">Qualifications</span>
-                    <h2 class="section-title">Education & Credentials</h2>
+                    <span class="section-subtitle" data-translate="edu-sub-hdr">Qualifications</span>
+                    <h2 class="section-title" data-translate="edu-title-hdr">Education & Credentials</h2>
                 </div>
                 
                 <div class="timeline scroll-reveal">
@@ -283,14 +298,14 @@
             <div class="portfolio-container">
                 <div class="section-header scroll-reveal">
                     <div>
-                        <span class="section-subtitle">Portfolio</span>
-                        <h2 class="section-title">Selected Projects</h2>
+                        <span class="section-subtitle" data-translate="proj-sub-hdr">Portfolio</span>
+                        <h2 class="section-title" data-translate="proj-title-hdr">Selected Projects</h2>
                     </div>
                     <!-- Filter Controls -->
                     <div class="filter-controls" id="filter-controls">
-                        <button class="filter-btn active" data-filter="all">All Projects</button>
-                        <button class="filter-btn" data-filter="infrastructure">Infrastructure</button>
-                        <button class="filter-btn" data-filter="interior">Interior</button>
+                        <button class="filter-btn active" data-filter="all" data-translate="proj-filter-all">All Projects</button>
+                        <button class="filter-btn" data-filter="infrastructure" data-translate="proj-filter-infra">Infrastructure</button>
+                        <button class="filter-btn" data-filter="interior" data-translate="proj-filter-interior">Interior</button>
                     </div>
                 </div>
                 
