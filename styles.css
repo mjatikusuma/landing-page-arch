@@ -32,6 +32,94 @@
     --transition-slow: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* Light Theme Variables Override */
+:root.light-theme,
+body.light-theme,
+.light-theme {
+    --color-bg: #F9F9FB;
+    --color-bg-card: #FFFFFF;
+    --color-bg-card-hover: #F1F1F4;
+    --color-border: rgba(0, 0, 0, 0.08);
+    --color-border-hover: rgba(0, 0, 0, 0.16);
+    --color-text-primary: #18181B; /* Zinc 900 */
+    --color-text-secondary: #52525B; /* Zinc 600 */
+    --color-text-muted: #71717A; /* Zinc 500 */
+    --color-accent: #27272A; /* Zinc 800 */
+    --color-accent-hover: #09090B; /* Zinc 950 */
+    --color-accent-rgb: 39, 39, 42;
+}
+
+/* In light mode, the logo shouldn't be inverted */
+.light-theme .logo-img,
+.light-theme .footer-logo-img {
+    filter: none !important;
+}
+
+/* In light mode, update shadow of cards and hero image for softer look */
+.light-theme .hero-img-wrapper {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+.light-theme .project-card {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+.light-theme .experience-card {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+}
+.light-theme .education-card {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+}
+.light-theme .form-group input,
+.light-theme .form-group select,
+.light-theme .form-group textarea {
+    background-color: rgba(0, 0, 0, 0.015);
+}
+
+/* Navigation Controls (Theme & Lang Switchers) */
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-right: 12px;
+}
+
+.nav-control-btn {
+    background: transparent;
+    border: 1px solid var(--color-border);
+    color: var(--color-text-secondary);
+    border-radius: var(--border-radius-md);
+    padding: 8px 12px;
+    cursor: pointer;
+    font-family: monospace;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all var(--transition-fast);
+    height: 36px;
+}
+
+.nav-control-btn:hover {
+    border-color: var(--color-border-hover);
+    color: var(--color-text-primary);
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.light-theme .nav-control-btn:hover {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+.nav-control-btn svg {
+    width: 14px;
+    height: 14px;
+    stroke-width: 2px;
+}
+
+/* Hide helper classes */
+.hidden {
+    display: none !important;
+}
+
 /* ==========================================================================
    RESET & BASE STYLES
    ========================================================================== */
